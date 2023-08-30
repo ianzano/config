@@ -18,4 +18,4 @@ antigen theme bira
 
 antigen apply
 
-[ -z "$TMUX" ] && { tmux attach || exec tmux new-session;}
+[ -z "$TMUX" ] && { tmux attach &> /dev/null || exec tmux new-session && exit;}
