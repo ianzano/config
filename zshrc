@@ -17,3 +17,5 @@ antigen theme bira
 #antigen theme kphoen
 
 antigen apply
+
+[ -z "$TMUX" ] && { tmux attach || exec tmux new-session;}
