@@ -10,7 +10,11 @@ sudo chmod 775 $APP_FOLDER
 
 # install yay
 sudo pacman -S --noconfirm git base-devel
-git clone https://aur.archlinux.org/yay.git $APP_FOLDER/yay
+if cd $APP_FOLDER/yay; then
+  git pull
+else
+  git clone https://aur.archlinux.org/yay.git $APP_FOLDER/yay
+fi
 cd $APP_FOLDER/yay
 makepkg -si
 
@@ -21,6 +25,11 @@ yay -S --noconfirm curl
 sudo curl -L git.io/antigen > $APP_FOLDER/antigen.zsh
 
 # download my own configuration to /app/config
+if cd $APP_FOLDER/config; then
+  git pull
+else
+  git clone https://github.com/ianzano/config.git $APP_FOLDER/config
+fi 
 
 # setup zsh configuration
 sudo rm -rf /etc/zsh/zshrc
@@ -29,7 +38,11 @@ sudo ln -s $APP_FOLDER/config/zshrc /etc/zsh/zshrc
 touch $HOME/.zshrc
 
 # setup NvChad neovim plugin
-git clone https://github.com/NvChad/NvChad.git $APP_FOLDER/NvChad
+if cd $APP_FOLDER/NvChad; then
+  git pull
+else
+  git clone https://github.com/NvChad/NvChad.git $APP_FOLDER/NvChad
+fi
 sudo rm -rf $XDG_CONFIG_HOME/nvim
 sudo ln -s $APP_FOLDER/NvChad $XDG_CONFIG_HOME/nvim
 
@@ -38,7 +51,11 @@ sudo rm -rf $APP_FOLDER/NvChad/lua/custom
 sudo ln -s $APP_FOLDER/config/nvchad $APP_FOLDER/NvChad/lua/custom
 
 # setup tmux package manager tpm
-git clone https://github.com/tmux-plugins/tpm $APP_FOLDER/tpm
+if cd $APP_FOLDER/tpm; then
+  git pull
+else
+  git clone https://github.com/tmux-plugins/tpm $APP_FOLDER/tpm
+fi
 
 # setup tmux configuration
 sudo mkdir -p $XDG_CONFIG_HOME/tmux
