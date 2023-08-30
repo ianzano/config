@@ -1,6 +1,9 @@
-source /app/antigen.zsh
-
 alias vim=nvim
+alias yr="yay -Rcns"
+alias ys="yay -S"
+alias yq="yay -Ss"
+
+source /app/antigen.zsh
 
 antigen use oh-my-zsh
 

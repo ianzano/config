@@ -50,6 +50,9 @@ sudo ln -s $APP_FOLDER/NvChad $XDG_CONFIG_HOME/nvim
 sudo rm -rf $APP_FOLDER/NvChad/lua/custom
 sudo ln -s $APP_FOLDER/config/nvchad $APP_FOLDER/NvChad/lua/custom
 
+# setup php
+yay -S php-fpm apache phpactor composer
+
 # setup tmux package manager tpm
 if cd $APP_FOLDER/tpm; then
   git pull

@@ -1,1 +1,4 @@
-require "lspconfig".tsserver.setup {}
+local lspconfig = require "lspconfig"
+
+lspconfig.tsserver.setup {}
+lspconfig.phpactor.setup {}
