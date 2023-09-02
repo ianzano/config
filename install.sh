@@ -37,18 +37,18 @@ sudo mkdir -p /etc/zsh
 sudo ln -s $APP_FOLDER/config/zshrc /etc/zsh/zshrc
 touch $HOME/.zshrc
 
-# setup NvChad neovim plugin
-if cd $APP_FOLDER/NvChad; then
+# setup AstroNvim neovim plugins
+if cd $APP_FOLDER/AstroNvim; then
   git pull
 else
-  git clone https://github.com/NvChad/NvChad.git $APP_FOLDER/NvChad
+  git clone https://github.com/AstroNvim/AstroNvim.git $APP_FOLDER/AstroNvim
 fi
 sudo rm -rf $XDG_CONFIG_HOME/nvim
-sudo ln -s $APP_FOLDER/NvChad $XDG_CONFIG_HOME/nvim
+sudo ln -s $APP_FOLDER/AstroNvim $XDG_CONFIG_HOME/nvim
 
-# setup my own NvChad custom configuration
-sudo rm -rf $APP_FOLDER/NvChad/lua/custom
-sudo ln -s $APP_FOLDER/config/nvchad $APP_FOLDER/NvChad/lua/custom
+# setup my own AstroNvim custom configuration
+sudo rm -rf $APP_FOLDER/AstroNvim/lua/user
+sudo ln -s $APP_FOLDER/config/astronvim $APP_FOLDER/AstroNvim/lua/user
 
 # setup php
 yay -S php-fpm apache phpactor composer
