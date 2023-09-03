@@ -32,4 +32,10 @@ return {
     opts = {},
     cmd = { "TmuxNavigateLeft", "TmuxNavigateRight", "TmuxNavigateUp", "TmuxNavigateDown" },
   },
+
+  {
+    "mrjones2014/smart-splits.nvim",
+    opts = {},
+    event = "User AstroFile",
+  },
 }
