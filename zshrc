@@ -2,6 +2,8 @@ alias vim=nvim
 alias yr="yay -Rcns"
 alias ys="yay -S"
 alias yq="yay -Ss"
+alias yy="yay -Sy"
+alias yu="yay -Su"
 
 source /app/antigen.zsh
 
